@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4s5hltf72y88"]
+
+[ext_resource type="PackedScene" uid="uid://cqube62ahkk8c" path="res://Scenes/Dungy.glb" id="1_hqqvp"]
+
+[node name="Dungy" instance=ExtResource("1_hqqvp")]
