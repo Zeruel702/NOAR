@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdbkd57mcs7ob"]
+[gd_scene load_steps=6 format=3 uid="uid://cdbkd57mcs7ob"]
 
 [ext_resource type="MeshLibrary" uid="uid://dgillw68d86cc" path="res://Scenes/Dungy.tres" id="3_10dtu"]
 [ext_resource type="PackedScene" uid="uid://dp25mdx4alep7" path="res://General/Scene_Transition/Level_Transition.tscn" id="3_42jee"]
 [ext_resource type="PackedScene" uid="uid://b7btr6krr02r3" path="res://00_Global/Scene_Manager/Scene_Manager.tscn" id="4_8yqlw"]
+[ext_resource type="PackedScene" uid="uid://cl7ctby2wmu0e" path="res://Scenes/player.tscn" id="4_10dtu"]
 
 [sub_resource type="Environment" id="Environment_5bmuo"]
 fog_enabled = true
@@ -31,7 +32,9 @@ Target_Level = "uid://c7ctc6j6yvi0f"
 
 [node name="Dungeon_Level_Transition1" parent="." instance=ExtResource("3_42jee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.12458, 0, 0)
-location = 2
+location = 3
 Target_Level = "uid://c7ctc6j6yvi0f"
 
 [node name="SceneManager" parent="." instance=ExtResource("4_8yqlw")]
+
+[node name="Player" parent="." instance=ExtResource("4_10dtu")]

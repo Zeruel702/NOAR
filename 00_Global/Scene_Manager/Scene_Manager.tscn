@@ -17,7 +17,6 @@ process_mode = 3
 script = ExtResource("1_4ixls")
 
 [node name="fade" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +25,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="fade"]
-visible = false
 modulate = Color(0.054992683, 0.046691895, 0.06640625, 1)
 layout_mode = 1
 anchors_preset = 15
