@@ -28,12 +28,10 @@ data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.122978, 0, -59.807045)
 location = 3
 Target_Level = "uid://c7ctc6j6yvi0f"
-Target_Area_Name = "Level_Transition"
 
 [node name="Dungeon_Level_Transition1" parent="." instance=ExtResource("3_42jee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.12458, 0, 0)
 location = 2
 Target_Level = "uid://c7ctc6j6yvi0f"
-Target_Area_Name = "Level_Transition"
 
 [node name="SceneManager" parent="." instance=ExtResource("4_8yqlw")]
