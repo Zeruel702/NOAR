@@ -22,6 +22,7 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	Apply_Area_Settings()
 	SceneManager.New_Scene_Ready.connect( _On_New_Scene_Ready )
 	SceneManager.Load_Scene_Finished.connect( _On_Load_Scene_Finished )
 	pass
