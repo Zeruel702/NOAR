@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://fxaolpuik5eq"]
+
+[ext_resource type="Texture2D" uid="uid://cyivaem45aydy" path="res://icon_color.png" id="1_g6rvb"]
+
+[node name="Player_Spawner" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.9, 0)
+modulate = Color(0, 0.984375, 0.29223633, 1)
+texture = ExtResource("1_g6rvb")

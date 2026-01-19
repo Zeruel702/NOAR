@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdbkd57mcs7ob"]
+[gd_scene load_steps=8 format=3 uid="uid://cdbkd57mcs7ob"]
 
 [ext_resource type="MeshLibrary" uid="uid://dgillw68d86cc" path="res://Scenes/Dungy.tres" id="3_10dtu"]
 [ext_resource type="PackedScene" uid="uid://dp25mdx4alep7" path="res://General/Scene_Transition/Level_Transition.tscn" id="3_42jee"]
 [ext_resource type="PackedScene" uid="uid://b7btr6krr02r3" path="res://00_Global/Scene_Manager/Scene_Manager.tscn" id="4_8yqlw"]
-[ext_resource type="PackedScene" uid="uid://cl7ctby2wmu0e" path="res://Scenes/player.tscn" id="4_10dtu"]
+[ext_resource type="Script" uid="uid://bbp1p6wcgf6v7" path="res://General/Player_Spawn/player_spawner.gd" id="4_10dtu"]
+[ext_resource type="PackedScene" uid="uid://cmci2gclinp0m" path="res://EFFECTS/fire.tscn" id="5_10dtu"]
+[ext_resource type="PackedScene" uid="uid://fxaolpuik5eq" path="res://General/Player_Spawn/player_spawner.tscn" id="5_cqm2e"]
 
 [sub_resource type="Environment" id="Environment_5bmuo"]
 fog_enabled = true
@@ -12,6 +14,10 @@ fog_light_energy = 0.01
 fog_density = 0.1
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Player_Spawner" parent="." instance=ExtResource("5_cqm2e")]
+transform = Transform3D(0.9935818, 0, 0.113116466, 0, 1, 0, -0.113116466, 0, 0.9935818, 2.8478136, 0.5749202, 0.10199189)
+script = ExtResource("4_10dtu")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5bmuo")
@@ -26,7 +32,7 @@ data = {
 }
 
 [node name="Dungeon_Level_Transition" parent="." instance=ExtResource("3_42jee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.122978, 0, -59.807045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.354935, 0, 0.662323)
 location = 3
 Target_Level = "uid://c7ctc6j6yvi0f"
 
@@ -37,4 +43,62 @@ Target_Level = "uid://c7ctc6j6yvi0f"
 
 [node name="SceneManager" parent="." instance=ExtResource("4_8yqlw")]
 
-[node name="Player" parent="." instance=ExtResource("4_10dtu")]
+[node name="Fire" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.328714, 1.8454118, -45.68812)
+
+[node name="Fire3" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.328714, 1.8454118, -53.578697)
+
+[node name="Fire2" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.642036, 1.4155971, -55.93994)
+
+[node name="Fire6" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.949696, 1.4155971, -55.93994)
+
+[node name="Fire8" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.173094, 1.4155971, -56.778545)
+
+[node name="Fire4" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.47235, 1.4155971, -42.79799)
+
+[node name="Fire5" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.094254, 1.4155971, -42.79799)
+
+[node name="Fire7" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.027835, 1.4155971, -42.79799)
+
+[node name="Fire9" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6528177, 0.23462057, -7.9027333)
+
+[node name="Fire10" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6528177, 0.23462057, 11.467369)
+
+[node name="Fire11" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.120596, 0.23462057, 10.836348)
+
+[node name="Fire12" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.120596, 0.23462057, -7.8292694)
+
+[node name="Fire13" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.669493, 0.23462057, 6.6992226)
+
+[node name="Fire14" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.521082, 0.23462057, -3.272911)
+
+[node name="Fire15" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.817337, 1.3009396, -5.4536924)
+
+[node name="Fire16" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.217468, 1.6987739, 8.661453)
+
+[node name="Fire17" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.69716, 1.0104713, -5.392744)
+
+[node name="Fire18" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.105766, 1.5503328, 8.6003475)
+
+[node name="Fire19" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.058945, 1.0862722, -5.66909)
+
+[node name="Fire20" parent="." instance=ExtResource("5_10dtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.137833, 2.031343, 8.391567)

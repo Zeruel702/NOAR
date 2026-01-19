@@ -13,7 +13,6 @@ config_version=5
 config/name="NexusOfAllRealities"
 run/main_scene="uid://2n6kwg7n5qpx"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 

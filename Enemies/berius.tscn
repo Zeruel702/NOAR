@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cao4duqps4dy3"]
+
+[ext_resource type="PackedScene" uid="uid://c771pog34cui4" path="res://Meshes/BERIUS.glb" id="1_cmlx0"]
+[ext_resource type="Script" uid="uid://cur5k8yde3f8u" path="res://Enemies/berius.gd" id="2_75vv8"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75vv8"]
+animation = &"Summon_Fire "
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3g1n5"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_uf67u"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_u7p4c"]
+graph_offset = Vector2(-621.2274, 40.195206)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_75vv8")
+"nodes/Animation 2/position" = Vector2(-221.38622, 344.35837)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_3g1n5")
+nodes/Animation/position = Vector2(-267.257, 79.1646)
+nodes/Transition/node = SubResource("AnimationNodeTransition_uf67u")
+nodes/Transition/position = Vector2(77.545845, 209.39012)
+node_connections = [&"output", 0, &"Animation"]
+
+[node name="BERIUS" instance=ExtResource("1_cmlx0")]
+script = ExtResource("2_75vv8")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0, 0.8484519, 0)
+bones/1/rotation = Quaternion(0.034183476, -3.5574126e-15, 8.149976e-09, 0.9994156)
+bones/3/rotation = Quaternion(-0.16352396, -1.1760461e-07, -5.8480715e-08, 0.98653936)
+bones/4/rotation = Quaternion(-0.119313136, 0.09612728, -0.7646485, 0.62596864)
+bones/5/rotation = Quaternion(0.09315718, -0.2612485, -0.51845264, 0.8088744)
+bones/8/rotation = Quaternion(-0.119313344, -0.09612741, 0.7646485, 0.6259686)
+bones/9/rotation = Quaternion(0.09315728, 0.26124847, 0.5184527, 0.8088745)
+bones/10/rotation = Quaternion(0.05035668, 0.20041336, -0.042783838, 0.9774806)
+bones/11/rotation = Quaternion(0.08692176, 0.31166843, 0.25726086, 0.9105627)
+bones/13/rotation = Quaternion(0.8727811, -0.11379202, -0.060514648, -0.47078928)
+bones/17/rotation = Quaternion(0.8727811, 0.11379202, 0.060514648, -0.47078928)
+
+[node name="AnimationPlayer" parent="." index="2"]
+deterministic = true
+autoplay = "Idle"
+speed_scale = 0.615
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
+tree_root = SubResource("AnimationNodeBlendTree_u7p4c")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Transition/current_state = ""
+parameters/Transition/transition_request = ""
+parameters/Transition/current_index = -1

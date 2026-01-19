@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7ctc6j6yvi0f"]
+[gd_scene load_steps=18 format=3 uid="uid://c7ctc6j6yvi0f"]
 
-[ext_resource type="PackedScene" uid="uid://cl7ctby2wmu0e" path="res://Scenes/player.tscn" id="1_a4ibq"]
+[ext_resource type="PackedScene" uid="uid://fxaolpuik5eq" path="res://General/Player_Spawn/player_spawner.tscn" id="1_d12iq"]
 [ext_resource type="PackedScene" uid="uid://dttxfl5dfoobo" path="res://Meshes/test_level.glb" id="2_4pot3"]
+[ext_resource type="Script" uid="uid://bbp1p6wcgf6v7" path="res://General/Player_Spawn/player_spawner.gd" id="2_jcgtk"]
 [ext_resource type="MeshLibrary" uid="uid://dgillw68d86cc" path="res://Scenes/Dungy.tres" id="3_4pot3"]
 [ext_resource type="Script" uid="uid://8bnth2vr7jmv" path="res://Scripts/world_sound.gd" id="3_48h3r"]
 [ext_resource type="AudioStream" uid="uid://drfufj5hyutnd" path="res://Audio/Music/temple.mp3" id="4_1oxfr"]
@@ -12,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://c16u7hlmi7vm8" path="res://Audio/Footsteps/dirt_step_sounds.tres" id="8_rrj4n"]
 [ext_resource type="PackedScene" uid="uid://dp25mdx4alep7" path="res://General/Scene_Transition/Level_Transition.tscn" id="11_nr7nu"]
 [ext_resource type="PackedScene" uid="uid://b7btr6krr02r3" path="res://00_Global/Scene_Manager/Scene_Manager.tscn" id="12_vfsjy"]
+[ext_resource type="PackedScene" uid="uid://cmci2gclinp0m" path="res://EFFECTS/fire.tscn" id="14_jcgtk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ryeb6"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,14 +30,16 @@ glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Player_Spawner" parent="." instance=ExtResource("1_d12iq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.911015, 3.9767413, -14.322077)
+script = ExtResource("2_jcgtk")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6pu41")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 9.227482, 0)
 shadow_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("1_a4ibq")]
 
 [node name="test_level" parent="." instance=ExtResource("2_4pot3")]
 
@@ -59,8 +63,6 @@ footstep_sounds = ExtResource("7_jcgtk")
 script = ExtResource("3_48h3r")
 footstep_sounds = ExtResource("8_rrj4n")
 
-[node name="Node3D" type="Node3D" parent="."]
-
 [node name="DungyWalls" type="GridMap" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh_library = ExtResource("3_4pot3")
@@ -82,5 +84,11 @@ Target_Level = "uid://cdbkd57mcs7ob"
 Target_Area_Name = "Dungeon_Level_Transition"
 
 [node name="SceneManager" parent="." instance=ExtResource("12_vfsjy")]
+
+[node name="Fire" parent="." instance=ExtResource("14_jcgtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -15)
+
+[node name="Fire2" parent="." instance=ExtResource("14_jcgtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -15)
 
 [editable path="test_level"]
