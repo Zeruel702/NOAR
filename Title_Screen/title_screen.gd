@@ -25,6 +25,7 @@ func _ready() -> void:
 	Start_Game_Button.grab_focus()
 	Start_Game_Button.pressed.connect( show_New_Game_Menu)
 	Load_Game_Button.pressed.connect( show_Load_Game_Menu)
+	Quit_Button.pressed.connect( _on_Quit_Pressed ) 
 	
 	New_Slot1.pressed.connect( _On_New_Game_Pressed.bind( 0 ) )
 	New_Slot2.pressed.connect( _On_New_Game_Pressed.bind( 1 ) )
@@ -96,6 +97,10 @@ func _On_Load_Game_Pressed( slot : int) -> void:
 	SaveManager.load_game( slot )
 	pass
 
+
+func _on_Quit_Pressed() -> void:
+	get_tree().quit()
+	pass
 
 
 func _on_animation_finished( anim_name :  String ) -> void:
