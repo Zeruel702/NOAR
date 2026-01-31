@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cao4duqps4dy3"]
+[gd_scene format=3 uid="uid://cao4duqps4dy3"]
 
 [ext_resource type="PackedScene" uid="uid://c771pog34cui4" path="res://Meshes/BERIUS.glb" id="1_cmlx0"]
 [ext_resource type="Script" uid="uid://cur5k8yde3f8u" path="res://Enemies/berius.gd" id="2_75vv8"]

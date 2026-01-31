@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=24 format=4 uid="uid://dgillw68d86cc"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://dgillw68d86cc"]
 
 [ext_resource type="Texture2D" uid="uid://budiu0uevq4i0" path="res://Scenes/Dungy_Atlas.png" id="1_8ol0g"]
 [ext_resource type="Texture2D" uid="uid://bwescbr20a146" path="res://Scenes/Dungy_Atlas_n.png" id="2_rpnnn"]

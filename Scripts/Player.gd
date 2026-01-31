@@ -45,6 +45,8 @@ func _ready() -> void:
 		queue_free()
 	state.enter(self)
 	self.call_deferred("reparent", get_tree().root )
+	
+	Messages.player_healed.connect( _on_player_healed )
 	pass
 
 
@@ -89,3 +91,15 @@ func update_velocity_using_direction(direction: Vector3, speed: float = base_spe
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed( "ui_select" ):
+		Messages.player_interacted.emit(self )
+	pass
+
+
+func _on_player_healed( amount : float ) -> void:
+	Health += amount
+	print( "HEALED JABRONI" )
+	#Audio/Visual
+	pass

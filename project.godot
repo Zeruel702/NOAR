@@ -8,17 +8,22 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="NexusOfAllRealities"
 run/main_scene="uid://2n6kwg7n5qpx"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
 PlayerStates="*res://Scripts/Player_States/Player_States.gd"
 SaveManager="*res://00_Global/Save_Manager/Save_Manager.gd"
 SceneManager="*res://00_Global/Scene_Manager/Scene_Manager.tscn"
+Messages="*uid://083ia8cllni3"
 
 [debug]
 
